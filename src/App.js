@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Chatbot from './Chatbot';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div style={styles.appContainer}>
+      <header style={styles.header}>
+        <h1>German Exam Generator Chatbot</h1>
       </header>
+      <main style={styles.main}>
+        <Chatbot />
+      </main>
     </div>
   );
-}
+};
+
+const styles = {
+  appContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    height: '100vh',
+    backgroundColor: '#f0f0f0',
+  },
+  header: {
+    width: '100%',
+    padding: '20px',
+    backgroundColor: '#007bff',
+    color: '#fff',
+    textAlign: 'center',
+  },
+  main: {
+    flex: 1,
+    width: '100%',
+    maxWidth: '600px',
+    padding: '20px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+};
 
 export default App;
